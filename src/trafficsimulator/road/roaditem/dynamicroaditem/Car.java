@@ -2,15 +2,15 @@
  * @author Jason Fu     01/22/2024
  */
 
-package trafficsimulator.roaditem.dynamicroaditem;
+package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
 public class Car extends Vehicle {
 
-    Car(){}
-    Car(int speed){}
-    Car(int xAxis, int yAxis){}
-    Car(int speed, int xAxis, int yAxis){}
-    Car(int speed, int direction, int xAxis, int yAxis){}
+    public Car(){}
+    public Car(int speed){}
+    public Car(int xAxis, int yAxis){}
+    public Car(int speed, int xAxis, int yAxis){}
+    public Car(int speed, int direction, int xAxis, int yAxis){}
 
     @Override
     public void accelerate(int toSpeed){}
@@ -20,5 +20,9 @@ public class Car extends Vehicle {
 
     @Override
     public void makeTurn(int direction, int angle){}
+
+    public static void main(String[] args){
+        System.out.println("Hi");
+    } 
 
 }

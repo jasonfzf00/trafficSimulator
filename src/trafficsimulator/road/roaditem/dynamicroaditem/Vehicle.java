@@ -37,4 +37,8 @@ public class Vehicle {
      */
     public void makeTurn(int direction, int angle){}
 
+    public static void main(String [] args){
+        Vehicle test = new Vehicle();
+    }
+
 }
