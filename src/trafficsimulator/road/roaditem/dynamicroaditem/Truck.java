@@ -1,7 +1,3 @@
-/**
- * @author Jason Fu     01/22/2024
- */
-
 package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
 public class Truck extends Vehicle{
@@ -15,12 +11,6 @@ public class Truck extends Vehicle{
     Truck(int speed, int direction, int xAxis, int yAxis, int weight){}
 
     @Override
-    public void accelerate(int toSpeed){}
-
-    @Override
-    public void decelerate(int toSpeed){}
-
-    @Override
     public void makeTurn(int direction, int angle){}
 
     /**
@@ -28,5 +18,7 @@ public class Truck extends Vehicle{
      * @param weight: set loadWeight to weight
      */
     public void setLoadWeight(int weight){}
+
+    public int getLoadWeight(){return loadWeight;}
 
 }

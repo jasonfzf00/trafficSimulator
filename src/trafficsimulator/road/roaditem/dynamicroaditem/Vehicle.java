@@ -1,33 +1,57 @@
-/**
- * @author Jason Fu     01/22/2024
- */
-
 package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
-
 /**
- * This class serve as an interface and should not create an object of Vehicle.
+ * This class is set to be abstract so no object should be created
+ * 
+ * setSpeed(toSpeed)
+ * setSpeed(toSpeed, delay)
+ * setDirection(direction)
+ * getDirection()
+ * makeTurn(direction, angle)
  */
-public class Vehicle {
 
-    int speed;
-    int direction;
-    int locationX;
-    int locationY;
+public abstract class Vehicle extends DynamicRoadItem {
+
+    private int speed;
+    private int direction; // 0: left, 1: right
 
     public Vehicle(){}
 
-    /**
-     * 
-     * @param toSpeed set speed to toSpeed
-     */
-    public void accelerate(int toSpeed){}
+    public void setSpeed(int toSpeed){
+        if (toSpeed >=0){
+            speed = toSpeed;
+        } else{
+            throw new IllegalArgumentException("Invalid toSpeed value");
+        }
+    }
 
     /**
-     * 
-     * @param toSpeed set speed to toSpeed
+     * Override setSpeed to gradually increase/decrease speed
+     * @param delay: 
      */
-    public void decelerate(int toSpeed){}
+    public void setSpeed(int toSpeed, int delay){
+        if (toSpeed >=0){
+            // Note that this may need to be changed after the time.java is set
+            while(delay!= 0){
+                if (toSpeed > speed){
+                    speed++;
+                }else{
+                    speed--;
+                }
+                delay--;
+            }
+        } else{
+            throw new IllegalArgumentException("Invalid toSpeed value");
+        }
+    }
+
+    public int getSpeed(){ return speed;}
+
+    public void setDirection(int direction){
+        this.direction = direction;
+    }
+
+    public int getDirection(){return direction;}
 
     /**
      * 
@@ -36,9 +60,5 @@ public class Vehicle {
      * e.g. (0, 90) indicates going straight.
      */
     public void makeTurn(int direction, int angle){}
-
-    public static void main(String [] args){
-        Vehicle test = new Vehicle();
-    }
 
 }
