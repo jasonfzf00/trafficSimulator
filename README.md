@@ -6,6 +6,6 @@ This project aims to create a traffic simulator which implements the idea of Obj
 
 Vehicles now support updating speed. You can find example code from test.java. An example output is as following.
 
-![Example Vehicle Speed Update](/src/img/vehicles-speed-example.png)
+<img src="/src/img/vehicles-speed-example.png" alt="vehicles-speed-example" height="200"/>
 
 
