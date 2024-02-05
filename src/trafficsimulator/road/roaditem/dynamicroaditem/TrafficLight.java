@@ -1,7 +1,5 @@
 package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
-
-
 public class TrafficLight extends DynamicRoadItem{
 
     private int status; // 0: red, 1: yellow, 2: green

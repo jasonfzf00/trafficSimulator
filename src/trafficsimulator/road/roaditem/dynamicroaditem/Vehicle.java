@@ -4,7 +4,9 @@ package src.trafficsimulator.road.roaditem.dynamicroaditem;
  * This class is set to be abstract so no object should be created
  * 
  * setSpeed(toSpeed)
- * setSpeed(toSpeed, delay)
+ * getSpeed()
+ * setDesiredSpeed(desiredSpeed)
+ * getDesiredSpeed()
  * setDirection(direction)
  * getDirection()
  * makeTurn(direction, angle)
@@ -12,40 +14,62 @@ package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
 public abstract class Vehicle extends DynamicRoadItem {
 
-    private int speed;
+    private double curSpeed;
+    private double desiredSpeed;
     private int direction; // 0: left, 1: right
+    private double accRate = 3.5;
+    private double decRate = 7.0;
+    public final double mpsToMph = 2.237;
 
-    public Vehicle(){}
-
-    public void setSpeed(int toSpeed){
+    public void setSpeed(double toSpeed){
         if (toSpeed >=0){
-            speed = toSpeed;
-        } else{
-            throw new IllegalArgumentException("Invalid toSpeed value");
-        }
-    }
-
-    /**
-     * Override setSpeed to gradually increase/decrease speed
-     * @param delay: 
-     */
-    public void setSpeed(int toSpeed, int delay){
-        if (toSpeed >=0){
-            // Note that this may need to be changed after the time.java is set
-            while(delay!= 0){
-                if (toSpeed > speed){
-                    speed++;
-                }else{
-                    speed--;
-                }
-                delay--;
+            if (toSpeed <= desiredSpeed){
+                if(toSpeed > desiredSpeed) curSpeed = desiredSpeed;
+                else curSpeed = toSpeed;
+            }
+            else {
+                if (toSpeed > desiredSpeed) curSpeed = desiredSpeed;
+                else curSpeed = toSpeed;
             }
         } else{
             throw new IllegalArgumentException("Invalid toSpeed value");
         }
     }
 
-    public int getSpeed(){ return speed;}
+    public double getSpeed(){ return curSpeed;}
+
+
+    public void updateSpeed(int second){
+        if (curSpeed < desiredSpeed){
+            accelerate(second);
+        }else if (curSpeed > desiredSpeed){
+            decelerate(second);
+        }
+    }
+
+    public abstract void accelerate (int second);
+    public abstract void decelerate (int second);
+
+
+    public void setDesiredSpeed(double desiredSpeed){
+        if(desiredSpeed >= 0){
+            this.desiredSpeed = desiredSpeed;
+        } else{
+            throw new IllegalArgumentException("Invalid desiredSpeed value");
+        }
+    }
+
+    public double getDesiredSpeed(){return desiredSpeed;}
+
+    public void setAccRate(double accRate){this.accRate = accRate;}
+
+    public double getAccRate(){return accRate;}
+
+    public void setDecRate(double decRate){this.decRate = decRate;}
+
+    public double getDecRate(){return decRate;}
+
+    public abstract String getType();
 
     public void setDirection(int direction){
         this.direction = direction;
