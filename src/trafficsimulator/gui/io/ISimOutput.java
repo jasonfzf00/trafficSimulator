@@ -1,7 +1,7 @@
-package src.trafficsimulator.road;
+package src.trafficsimulator.gui.io;
 
 import src.trafficsimulator.road.roaditem.dynamicroaditem.Vehicle;
 
 public interface ISimOutput {
-    double getSpeed(Vehicle v);
+    public double getSpeed(Vehicle v);
 }

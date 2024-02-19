@@ -26,13 +26,13 @@ public class Car extends Vehicle {
     @Override
     public void accelerate(int second) {
         double curSpeed = getSpeed();
-        this.setSpeed(curSpeed + (mpsToMph * getAccRate() * second));
+        this.setSpeed(curSpeed + (getAccRate() * second));
     }
 
     @Override
     public void decelerate(int second) {
         double curSpeed = getSpeed();
-        this.setSpeed(curSpeed - (mpsToMph * getAccRate() * second));
+        this.setSpeed(curSpeed - (getAccRate() * second));
     }
 
 

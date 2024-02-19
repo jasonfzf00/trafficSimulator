@@ -51,8 +51,8 @@ public class Truck extends Vehicle{
         double decRate = this.getDecRate();
 
         // A loaded truck weigh around 80,000 lbs 
-        this.accRateLoaded = accRate - (Double.valueOf(loadWeight) / 80000);
-        this.decRateLoaded = decRate - (Double.valueOf(loadWeight) / 80000);
+        this.accRateLoaded = accRate - ((double) loadWeight / 80000);
+        this.decRateLoaded = decRate - ((double) loadWeight / 80000);
     }
 
     @Override
@@ -63,13 +63,13 @@ public class Truck extends Vehicle{
     @Override
     public void accelerate(int second) {
         double curSpeed = getSpeed();
-        this.setSpeed(curSpeed + (mpsToMph * accRateLoaded * second));
+        this.setSpeed(curSpeed + (accRateLoaded * second));
     }
 
     @Override
     public void decelerate(int second) {
         double curSpeed = getSpeed();
-        this.setSpeed(curSpeed + (mpsToMph * decRateLoaded * second));
+        this.setSpeed(curSpeed + (decRateLoaded * second));
     }
 
 }

@@ -2,7 +2,6 @@ package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
 /**
  * This class is set to be abstract so no object should be created
- * 
  * setSpeed(toSpeed)
  * getSpeed()
  * setDesiredSpeed(desiredSpeed)
@@ -14,12 +13,11 @@ package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
 public abstract class Vehicle extends DynamicRoadItem {
 
-    private double curSpeed;
-    private double desiredSpeed;
+    private double curSpeed; // meters per second
+    private double desiredSpeed; // meters per second
     private int direction; // 0: left, 1: right
-    private double accRate = 3.5;
-    private double decRate = 7.0;
-    public final double mpsToMph = 2.237;
+    private double accRate = 3.5; // Meters per second
+    private double decRate = 7.0; // Meters per second
 
     public void setSpeed(double toSpeed){
         if (toSpeed >=0){
