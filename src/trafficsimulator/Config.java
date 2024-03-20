@@ -1,5 +1,7 @@
 package src.trafficsimulator;
 
+// Storing global constants that needs to be used in other classes
+
 public class Config {
     public static final double AccRate = 3.5;          // Acceleration rate for cars in m/s
     public static final double AccRateEmpty = 2.5;     // Acceleration rate for light trucks in m/s
