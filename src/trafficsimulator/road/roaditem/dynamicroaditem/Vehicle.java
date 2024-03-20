@@ -1,5 +1,7 @@
 package src.trafficsimulator.road.roaditem.dynamicroaditem;
 
+import src.trafficsimulator.road.RoadItem;
+
 /**
  * This class is set to be abstract so no object should be created
  * setSpeed(toSpeed)
@@ -11,7 +13,7 @@ package src.trafficsimulator.road.roaditem.dynamicroaditem;
  * makeTurn(direction, angle)
  */
 
-public abstract class Vehicle extends DynamicRoadItem {
+public abstract class Vehicle extends RoadItem {
 
     private double curSpeed; // meters per second
     private double desiredSpeed; // meters per second
