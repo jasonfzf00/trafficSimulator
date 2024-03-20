@@ -1,8 +1,9 @@
 package src.trafficsimulator.gui;
 
+import src.trafficsimulator.Config;
 import src.trafficsimulator.road.Road;
 import src.trafficsimulator.road.roaditem.dynamicroaditem.Vehicle;
-import src.trafficsimulator.Config;
+
 
 public class ImperialGUI implements GUI {
 

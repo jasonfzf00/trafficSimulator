@@ -6,9 +6,9 @@ import src.trafficsimulator.road.Road;
 import src.trafficsimulator.road.roaditem.dynamicroaditem.Vehicle;
 
 public interface GUI extends ISimInput, ISimOutput {
-    public Road createRoad(String name, Road.Heading hdg, double len, double x, double y);
+    Road createRoad(String name, Road.Heading hdg, double len, double x, double y);
 
-    public void setSpeedLimit(Vehicle v, double speed);
-    public double getSpeed(Vehicle v);
+    void setSpeedLimit(Vehicle v, double speed);
+    double getSpeed(Vehicle v);
 
 }

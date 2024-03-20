@@ -9,7 +9,7 @@ public class ConsolePrint implements IPrintDriver{
         int x, y;
         int CharMapSize = cm.map.length;
         int CCx = Conversions.wcPointToCCpoint(road.getLocX());
-        int CCy = Conversions.wcPointToCCpoint(road.getLocY());
+        int CCy = Conversions.wcPointToCCpoint(-road.getLocY());
         int distance = 0;
         int CCRoadLength = Conversions.wcLengthToCClength(road.getLength());
         switch (road.getHeading()) {
