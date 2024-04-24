@@ -3,8 +3,7 @@
 This project aims to create a traffic simulator which implements the idea of Object-oriented programming.
 
 ## Usage
-Run `Trafficsimulator.java`. The program will run continously. Use
-`ctrl + C` to stop the program.
+In any IDE, run the main of `Trafficsimulator.java`.
 
 ## Code Structure
 
@@ -47,10 +46,10 @@ trafficsimulator
 
 Vehicles now support updating speed. You can find example code from test.java. An example output is as following.
 
-<img src="/src/img/vehicles-speed-example.png" alt="vehicles-speed-example" height="500"/>
+<img src="/img/vehicles-speed-example.png" alt="vehicles-speed-example" height="500"/>
 
 ## Update 03/20
 
 Now support printing out map with roads. Example output:
 
-<img src="/src/img/roadPrint.png" alt="roadPrint" height="500"/>
+<img src="/img/roadPrint.png" alt="roadPrint" height="500"/>
