@@ -10,7 +10,7 @@ In any IDE, run the main of `Trafficsimulator.java`.
 ```bash
 trafficsimulator
 ├── Config.java # Constants
-├── Trafficsimulator.java # Main program
+├── Trafficsimulator.java # Main program with Timer
 ├── gui
 │   ├── GUI.java
 │   ├── ImperialGUI.java
@@ -25,22 +25,18 @@ trafficsimulator
 │   ├── RoadItem.java
 │   └── roaditem
 │       ├── dynamicroaditem
-│       │   ├── Car.java
-│       │   ├── TrafficLight.java
-│       │   ├── Truck.java
-│       │   └── Vehicle.java
-│       └── staticroaditem
-│           ├── Intersection.java
-│           ├── SpeedLimit.java
-│           ├── StopSign.java
-│           └── Yield.java
+│           ├── Car.java
+│           ├── TrafficLight.java
+│           ├── Truck.java
+│           └── Vehicle.java
 ├── sui
 │   ├── CharMatrix.java
 │   ├── ConsolePrint.java
 │   ├── Conversions.java
 │   └── IPrintDriver.java
-└── timer
 ```
+## Update 04/24
+Traffic lights are now available.
 
 ## Update 02/05
 

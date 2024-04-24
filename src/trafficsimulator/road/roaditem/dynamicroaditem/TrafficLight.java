@@ -7,7 +7,7 @@ import src.trafficsimulator.sui.IPrintDriver;
 public class TrafficLight extends RoadItem {
     private char status; // red 3s, yellow 2s, green 4s
 
-    // Light Internal timer, updated by stimulator timer, reset to 0 when reached to
+    // Light Internal timer, updated by stimulator timer
     private int lightTimer;
 
     public TrafficLight(double x, double y){
@@ -38,6 +38,7 @@ public class TrafficLight extends RoadItem {
     }
 
     public void print(IPrintDriver print, CharMatrix cm) {
+        // Call to print traffic light to map
         print.printTrafficLight(this,cm);
     }
 }
