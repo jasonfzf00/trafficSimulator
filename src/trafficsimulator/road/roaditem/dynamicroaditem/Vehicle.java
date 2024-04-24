@@ -77,12 +77,6 @@ public abstract class Vehicle extends RoadItem {
 
     public int getDirection(){return direction;}
 
-    /**
-     * 
-     * @param direction: 0 - Left; 1 - Right
-     * @param angle: We will assume it is the multiple of 90 degree for now, 180 e.g.
-     * e.g. (0, 90) indicates going straight.
-     */
     public void makeTurn(int direction, int angle){}
 
 }

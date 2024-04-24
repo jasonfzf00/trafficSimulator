@@ -31,29 +31,39 @@ public class Trafficsimulator {
         this.cp = new ConsolePrint();
         this.cm = new CharMatrix(Config.CharMapSize);
         // Add road
-        Road uptown = simInput.createRoad("Uptown", Heading.North, .09,
+        Road uptown = simInput.createRoad("Uptown", Heading.North, .180,
                 0.0, -0.08);
         map.addRoad(uptown);
+//        Road crosstown = simInput.createRoad("Crosstown", Heading.East, .180,
+//        -0.08, -0.02);
+//        map.addRoad(crosstown);
         // Add traffic lights 1/3 and 2/3 of road
-        TrafficLight light1 = new TrafficLight(1,2);
+        TrafficLight light1 = new TrafficLight(13.0,22.0);
         lights.add(light1);
+        TrafficLight light2 = new TrafficLight(26.0,22.0);
+        lights.add(light2);
     }
 
     public void startSimulation(){
+        // Initialize map
         map.print(cp,cm);
-
-//        for (int i = 0; i < Config.CharMapSize; i++)
-//        {
-//            String s = new String(cm.map[i]);
-//            System.out.println(s);
-//        }
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 // Increment current time
                 currentTime++;
-                // Update traffic status based on current time
+                // Update traffic status
                 updateTrafficStatus(currentTime);
+                // Console Clear
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+                // Print map
+                for (int i = 0; i < Config.CharMapSize; i++)
+                {
+                    String s = new String(cm.map[i]);
+                    System.out.println(s);
+                }
+
             }
         }, 0, 1000); // Delay of 0 ms, repeat every second
     }
@@ -62,18 +72,12 @@ public class Trafficsimulator {
         // Use an iterator to update ever traffic lights
         for (TrafficLight light : lights){
             light.updateLightTimer();
-            System.out.println(light.getStatus());
+            light.print(cp,cm);
         }
     }
 
     public static void main(String[] args) {
         Trafficsimulator simulator = new Trafficsimulator();
         simulator.startSimulation();
-
-////        Road crosstown = simInput.createRoad("Crosstown", Heading.East, .180,
-////                -0.08, -0.02);
-////        map.addRoad(crosstown);
-
-        //TrafficLight test = new TrafficLight();
     }
 }

@@ -38,6 +38,6 @@ public class TrafficLight extends RoadItem {
     }
 
     public void print(IPrintDriver print, CharMatrix cm) {
-        print.printRoadItem(this,cm);
+        print.printTrafficLight(this,cm);
     }
 }

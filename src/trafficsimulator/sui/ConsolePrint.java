@@ -52,6 +52,8 @@ public class ConsolePrint implements IPrintDriver{
     }
 
     @Override
-    public void printRoadItem(RoadItem item, CharMatrix cm) {
+    public void printTrafficLight(TrafficLight light, CharMatrix cm) {
+        int CharMapSize = cm.map.length;
+        cm.map[(int)light.getLocX()][(int)light.getLocY()] = light.getStatus();
     }
 }

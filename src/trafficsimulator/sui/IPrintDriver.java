@@ -8,7 +8,7 @@ import src.trafficsimulator.sui.CharMatrix;
 public interface IPrintDriver {
     public void printRoad(Road road, CharMatrix cm);
 
-    void printRoadItem(RoadItem item, CharMatrix cm);
+    void printTrafficLight(TrafficLight light, CharMatrix cm);
 
     // public void printCar(Car car);
 }
