@@ -1,7 +1,8 @@
 package src.trafficsimulator.sui;
 
 import src.trafficsimulator.road.Road;
-import src.trafficsimulator.road.roaditem.dynamicroaditem.Car;
+import src.trafficsimulator.road.RoadItem;
+import src.trafficsimulator.road.roaditem.dynamicroaditem.TrafficLight;
 
 public class ConsolePrint implements IPrintDriver{
     @Override
@@ -50,7 +51,7 @@ public class ConsolePrint implements IPrintDriver{
         }
     }
 
-    public void printCar(Car car) {
-
+    @Override
+    public void printRoadItem(RoadItem item, CharMatrix cm) {
     }
 }

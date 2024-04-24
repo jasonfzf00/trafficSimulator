@@ -1,6 +1,6 @@
 # Traffic Simulator
 
-This project aims to create a traffic simulator which implements the idea of Object-oriented programming. 
+This project aims to create a traffic simulator which implements the idea of Object-oriented programming.
 
 ## Code Structure
 
