@@ -32,6 +32,7 @@ public class TrafficLight extends RoadItem {
             updateStatus('-');
         }
     }
+    @Override
     public void updateStatus(char status){
         this.status = status;
     }

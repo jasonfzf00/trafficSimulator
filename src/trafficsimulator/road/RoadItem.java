@@ -14,4 +14,8 @@ public abstract class RoadItem {
         locX = x;
         locY = y;
     }
+
+    public void updateStatus(){
+
+    }
 }
