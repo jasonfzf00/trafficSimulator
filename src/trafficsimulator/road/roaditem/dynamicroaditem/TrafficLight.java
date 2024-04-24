@@ -10,7 +10,8 @@ public class TrafficLight extends RoadItem {
     // Light Internal timer, updated by stimulator timer, reset to 0 when reached to
     private int lightTimer;
 
-    public TrafficLight(){
+    public TrafficLight(double x, double y){
+        this.setLocation(x,y);
         status = 0;
         lightTimer = 0;
     }

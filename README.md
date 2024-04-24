@@ -2,6 +2,10 @@
 
 This project aims to create a traffic simulator which implements the idea of Object-oriented programming.
 
+## Usage
+Run `Trafficsimulator.java`. The program will run continously. Use
+`ctrl + C` to stop the program.
+
 ## Code Structure
 
 ```bash
