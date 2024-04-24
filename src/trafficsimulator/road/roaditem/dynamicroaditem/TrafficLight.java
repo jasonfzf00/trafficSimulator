@@ -12,11 +12,11 @@ public class TrafficLight extends RoadItem {
 
     public TrafficLight(double x, double y){
         this.setLocation(x,y);
-        status = 0;
+        status = 'X';
         lightTimer = 0;
     }
 
-    public int getStatus(){
+    public char getStatus(){
         return status;
     }
 
@@ -32,7 +32,7 @@ public class TrafficLight extends RoadItem {
             updateStatus('-');
         }
     }
-    @Override
+
     public void updateStatus(char status){
         this.status = status;
     }

@@ -34,6 +34,4 @@ public class Car extends Vehicle {
         double curSpeed = getSpeed();
         this.setSpeed(curSpeed - (getAccRate() * second));
     }
-
-
 }

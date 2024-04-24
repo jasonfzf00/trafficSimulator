@@ -16,7 +16,7 @@ public class Trafficsimulator {
     private Timer timer;
     private int currentTime;
     private Map map;
-    private Deque<RoadItem> items; // We use Deque to store items
+    private Deque<TrafficLight> lights; // We use Deque to store items
     private IPrintDriver cp;
     private CharMatrix cm;
     private GUI simInput;
@@ -25,7 +25,7 @@ public class Trafficsimulator {
         // Initialize when construct simulation
         this.timer = new Timer();
         this.currentTime = 0;
-        this.items = new ArrayDeque<>();
+        this.lights = new ArrayDeque<>();
         this.simInput = new MetricGUI();
         this.map = new Map();
         this.cp = new ConsolePrint();
@@ -35,6 +35,8 @@ public class Trafficsimulator {
                 0.0, -0.08);
         map.addRoad(uptown);
         // Add traffic lights 1/3 and 2/3 of road
+        TrafficLight light1 = new TrafficLight(1,2);
+        lights.add(light1);
     }
 
     public void startSimulation(){
@@ -58,8 +60,9 @@ public class Trafficsimulator {
 
     private void updateTrafficStatus(int time) {
         // Use an iterator to update ever traffic lights
-        for (RoadItem light : items){
-            light.
+        for (TrafficLight light : lights){
+            light.updateLightTimer();
+            System.out.println(light.getStatus());
         }
     }
 

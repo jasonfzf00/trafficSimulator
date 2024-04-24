@@ -71,5 +71,4 @@ public class Truck extends Vehicle{
         double curSpeed = getSpeed();
         this.setSpeed(curSpeed + (decRateLoaded * second));
     }
-
 }
